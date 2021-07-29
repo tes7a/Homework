@@ -1,3 +1,13 @@
-.someClass {
+.button {
+    margin: 10px;
+    width: 60px;
+}
 
+.affair{
+    display: flex;
+}
+
+.item{
+    margin: 10px;
+    width: 100px;
 }
