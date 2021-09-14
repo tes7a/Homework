@@ -16,9 +16,11 @@ const Greeting: React.FC<GreetingPropsType> = (
     const inputClass = error? s.errorInput  : s.input  // need to fix with (?:)
 
     return (
-        <div>
+        <div className={s.group}>
+            <label className={s.label}>
             <input value={name} onChange={setNameCallback} className={inputClass}/>
             <span>{error}</span>
+            Имя</label>
             <button onClick={addUser}>add</button>
             <span>{totalUsers}</span>
         </div>
