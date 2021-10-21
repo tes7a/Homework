@@ -13,7 +13,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
                 else if(a.name < b.name) return -1
                 else return 0
             })
-            return action.payload.up === "up"? newState: newState.reverse()
+            return action.payload === "up"? newState: newState.reverse()
         }
         case 'CHECK-AGE': {
             return state.filter(f => f.age >= action.payload)
@@ -22,15 +22,15 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
     }
 }
 
-const checkAge = (age: 18) => {
+const checkAge = (payload: number) => {
     return{
         type: 'CHECK-AGE',
-        payload: age,
+        payload
     } as const
 }
-const sortNames = (up?: "up", down?: "down") => {
+const sortNames = (payload: "up" | "down") => {
     return{
         type: 'SORT-NAMES',
-        payload: {up, down},
+        payload
     } as const
 }

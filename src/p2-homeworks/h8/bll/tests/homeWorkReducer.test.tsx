@@ -16,7 +16,7 @@ beforeEach(() => {
 })
 
 test('sort name up', () => {
-    const newState = homeWorkReducer(initialState, {type: 'SORT-NAMES', payload:{up: 'up', down: undefined}})
+    const newState = homeWorkReducer(initialState, {type: 'SORT-NAMES', payload:"up"})
 
     // const res = [
     //     1,3//...
@@ -32,7 +32,7 @@ test('sort name up', () => {
     expect(newState[5].age).toBe(3)
 })
 test('sort name down', () => {
-    const newState = homeWorkReducer(initialState, {type: 'SORT-NAMES', payload:{ up: undefined, down: 'down'}})
+    const newState = homeWorkReducer(initialState, {type: 'SORT-NAMES', payload: "down"})
 
     expect(newState[0].name).toBe('Кот')
     expect(newState[0]._id).toBe(0)
