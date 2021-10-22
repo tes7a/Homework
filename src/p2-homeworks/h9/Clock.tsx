@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, MouseEvent, MouseEventHandler} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
 function Clock() {
@@ -7,25 +7,31 @@ function Clock() {
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
-        // stop
+        clearInterval(timerId)
     }
     const start = () => {
         stop()
-        const id: number = window.setInterval(() => {
+        const id: number = +setInterval(() => {
+            setDate(new Date())
             // setDate
         }, 1000)
         setTimerId(id)
     }
 
-    const onMouseEnter = () => {
+
+    const onMouseEnter: MouseEventHandler<HTMLDivElement> = (e) => {
+        setShow(true)
         // show
     }
-    const onMouseLeave = () => {
+
+
+    const onMouseLeave: MouseEventHandler<HTMLDivElement> = (e) => {
+        setShow(false)
         // close
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    const stringTime = date?.toLocaleTimeString() || <br/>// fix with date
+    const stringDate = date?.toLocaleDateString() || <br/> // fix with date
 
     return (
         <div>
