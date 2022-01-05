@@ -5,10 +5,10 @@ const initState: initState = {
 export const themeReducer = (state = initState, action: ActionsType): initState => { // fix any
     switch (action.type) {
         case "COLOR/CHANGE-THEME": {
-            debugger;
             return {...state, color: action.color};
         }
-        default: return state;
+        default:
+            return state;
     }
 };
 

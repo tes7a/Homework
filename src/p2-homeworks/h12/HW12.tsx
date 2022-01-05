@@ -13,7 +13,6 @@ function HW12() {
     const dispatch = useDispatch();
 
     const onChangeCallback = (option: string) => {
-        debugger;
         dispatch(changeThemeAC(option))
     }
     // useDispatch, onChangeCallback
